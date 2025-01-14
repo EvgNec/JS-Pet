@@ -2,7 +2,7 @@ import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
 
 import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars.js';
 
-// Получение полной информации о трендах
+// Отримання інформації по трендах
 export async function getTrendData(page) {
   try {
     const { data } = await axios.get(
@@ -14,7 +14,7 @@ export async function getTrendData(page) {
   }
 }
 
-// Фетч по поисковому запросу
+// Фетч по пошуковому запиту
 export async function fetchMovieSearcher(text, page) {
   try {
     const { data } = await axios.get(
@@ -27,7 +27,7 @@ export async function fetchMovieSearcher(text, page) {
   }
 }
 
-// Фетч фильма по его ID
+// Фетч філма по його ID
 export async function getMovieById(id) {
   try {
     const { data } = await axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);

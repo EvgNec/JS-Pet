@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <p><a href="../../index.html">Main page</a></p>
+    hero.innerHTML = `
+    <div class="container">
+      <div class="film_box">
+        <h2 class="film_title">${original_title || title}</h2>
+        <div class="film_rate">${starIcons}</div>
+        <h3 class="film_date">release_date</h3>
+        <img
+          src="https://image.tmdb.org/t/p/original/${poster_path}"
+          alt="BestFilmWeek"
+          loading="lazy"
+          class="film_img"
+        />
+        <div class="film_desc">${overview}</div>
+        <button type="button" id="trailer" data-id="${id}" class="film_btn">
+          Watch trailer
+        </button>
+      </div>
+    </div>
 
-      <p><a href="../../index.html">На головну</a></p>
-    
-
-       <script src="../js/film.js" type="module"></script>
-</body>
+    <script src="../js/film.js" type="module"></script>
+  </body>
 </html>
