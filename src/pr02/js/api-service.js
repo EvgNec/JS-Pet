@@ -2,6 +2,8 @@ import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
 
 import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars.js';
 
+
+
 // Отримання інформації по трендах
 export async function getTrendData(page) {
   try {

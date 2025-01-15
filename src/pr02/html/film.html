@@ -8,23 +8,8 @@
   </head>
   <body>
     <p><a href="../../index.html">Main page</a></p>
-    hero.innerHTML = `
-    <div class="container">
-      <div class="film_box">
-        <h2 class="film_title">${original_title || title}</h2>
-        <div class="film_rate">${starIcons}</div>
-        <h3 class="film_date">release_date</h3>
-        <img
-          src="https://image.tmdb.org/t/p/original/${poster_path}"
-          alt="BestFilmWeek"
-          loading="lazy"
-          class="film_img"
-        />
-        <div class="film_desc">${overview}</div>
-        <button type="button" id="trailer" data-id="${id}" class="film_btn">
-          Watch trailer
-        </button>
-      </div>
+    <div class="film-container" id="film">
+
     </div>
 
     <script src="../js/film.js" type="module"></script>
