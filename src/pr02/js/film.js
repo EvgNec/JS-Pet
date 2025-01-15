@@ -5,20 +5,37 @@ const refs = {
   formContainer: document.querySelector('.film-container'),
 };
 
-async function test(page) {
-  const film = getTrendData(page);
-  return film
-    .then(data => {
-        console.log("🚀 ~ test ~ data:", data.results[0])
-        const film = data.results;
-        refs.formContainer.innerHTML = greateMarkup(film)
-    })
-  
+// async function  renderRandomFilm(page) {
+//   const film = getTrendData(page);
+//   return film
+//     .then(data => {
+//         const film = data.results;
+//         refs.formContainer.innerHTML = greateMarkup(film)
+//     })
+//       .catch(error => 
+//         console.log(error)
+//     );
+// }
 
-      .catch(error => 
-        console.log(error)
-    );
+async function renderRandomFilm(page) {
+  try {
+    // Викликаємо функцію getTrendData для отримання даних
+    const response = await getTrendData(page);
+    const film = response.results;
+
+    // Оновлюємо вміст контейнера
+      refs.formContainer.innerHTML = greateMarkup(film);
+     // Отримуємо елементи
+      modalWindow();
+  } catch (error) {
+    // Обробка помилок
+    console.error('Error fetching films:', error);
+  }
+     
 }
+
+
+
 
 function greateMarkup(arr) {  
     return arr.map(({ original_title, title, vote_average, poster_path, overview, release_date }) =>
@@ -37,23 +54,37 @@ function greateMarkup(arr) {
         </div>
         </div>
         <div class="film_desc">${overview}</div>
-        <button type="button" id="trailer" class="film_btn">
+        <button type="button" id="openModal" class="film_btn">
           Watch trailer
         </button>
       </div>`)
         .join('');
 }
 
+renderRandomFilm(1);
 
 
 
-// function renderRandomFilm() {
-//   const data = axios.get(
-//     'https://api.themoviedb.org/3/trending/all/day?api_key=249f222afb1002186f4d88b2b5418b55'
-//   );
-//   return data;
-// }
+ 
+function modalWindow() {
+    const modal = document.getElementById('modal');
+    const openModalBtn = document.getElementById('openModal');
+    const closeModalBtn = document.getElementById('closeModal');
 
-// console.log(renderRandomFilm())
- test(1);
+    // Функція для відкриття модального вікна
+    openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
 
+    // Функція для закриття модального вікна
+    closeModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Закриття модального вікна при натисканні за межами контенту
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+}
