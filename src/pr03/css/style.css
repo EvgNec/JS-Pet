@@ -1,4 +1,144 @@
+
+/* Загальні налаштування */
 body {
-    display: block;
-    margin: 12px;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Контейнер картотеки */
+.film-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Загальні налаштування для контейнера картки */
+.film_box {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 300px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Стиль для постера */
+.film_img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Інформаційна секція */
+.film_info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Заголовок */
+.film_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+/* Метадані */
+.film-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Рейтинг */
+.film_rate {
+  font-weight: bold;
+  color: #f39c12;
+}
+
+/* Опис */
+.film_desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .film_box {
+    max-width: 100%;
+  }
+}
+
+/* Розташування кнопки понизу */
+.film_btn {
+  align-self: center; /* Вирівнювання по центру (горизонтально) */
+  margin-top: auto; /* Залишає простір зверху */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.film_btn:hover {
+background-color: #0056b3;
+}
+
+.open-modal-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Модальне вікно */
+.modal {
+  display: none; /* Сховано за замовчуванням */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Контент модального вікна */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Кнопка закриття */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #007bff;
 }
