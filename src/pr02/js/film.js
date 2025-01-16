@@ -13,8 +13,7 @@ const refs = {
 //         refs.formContainer.innerHTML = greateMarkup(film)
 //     })
 //       .catch(error => 
-//         console.log(error)
-//     );
+//           console.log(error));
 // }
 
 async function renderRandomFilm(page) {
@@ -25,8 +24,8 @@ async function renderRandomFilm(page) {
 
     // Оновлюємо вміст контейнера
       refs.formContainer.innerHTML = greateMarkup(film);
-     // Отримуємо елементи
-      modalWindow();
+      // Отримуємо елементи
+   modalWindow();
   } catch (error) {
     // Обробка помилок
     console.error('Error fetching films:', error);
@@ -38,6 +37,7 @@ async function renderRandomFilm(page) {
 
 
 function greateMarkup(arr) {  
+
     return arr.map(({ original_title, title, vote_average, poster_path, overview, release_date }) =>
         `<div class="film_box">
         <img
@@ -68,7 +68,9 @@ renderRandomFilm(1);
  
 function modalWindow() {
     const modal = document.getElementById('modal');
-    const openModalBtn = document.getElementById('openModal');
+    const openModalBtn = document.querySelector('.film_btn');
+    console.log("🚀 ~ modalWindow ~ openModalBtn:", openModalBtn)
+    
     const closeModalBtn = document.getElementById('closeModal');
 
     // Функція для відкриття модального вікна
