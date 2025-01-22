@@ -18,7 +18,7 @@
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Title</label>
           <input
-          name="'title"
+            name="'title"
             placeholder="write your own title"
             class="form-control input-title"
             id="exampleInputEmail1"
@@ -30,7 +30,7 @@
             >Description</label
           >
           <textarea
-          name="description"
+            name="description"
             placeholder="write your own description"
             rows="3"
             class="form-control input-description"
@@ -40,7 +40,30 @@
         </div>
         <button type="submit" class="btn btn-primary btn-add">Add</button>
       </form>
-      <div class="cards">
+      <div class="cards"></div>
+      <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <input class="modal-title input-editTitle"/>
+            </div>
+            <div class="modal-body">
+              <textarea rows="5" class="input-editDescription"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary btn-save">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
