@@ -1,19 +1,19 @@
-const API = "https://jsonplaceholder.typicode.com/posts";
-const cards = document.querySelector(".cards");
-const inputTitle = document.querySelector(".input-title");
-const inputDescription = document.querySelector(".input-description");
-const addButton = document.querySelector(".btn-add");
-const modal = document.querySelector(".modal");
-const modalTitle = document.querySelector(".input-editTitle");
-const modalDescription = document.querySelector(".input-editDescription");
-const btnSave = document.querySelector(".btn-save");
-let newCard = "";
+const API = 'https://jsonplaceholder.typicode.com/posts';
+const cards = document.querySelector('.cards');
+const inputTitle = document.querySelector('.input-title');
+const inputDescription = document.querySelector('.input-description');
+const addButton = document.querySelector('.btn-add');
+const modal = document.querySelector('.modal');
+const modalTitle = document.querySelector('.input-editTitle');
+const modalDescription = document.querySelector('.input-editDescription');
+const btnSave = document.querySelector('.btn-save');
+let newCard = '';
 
 function getPosts() {
   fetch(API)
-    .then((res) => res.json())
-    .then((posts) => { 
-      posts.slice(0, 12).map((post) => {
+    .then(res => res.json())
+    .then(posts => {
+      posts.slice(0, 12).map(post => {
         return (newCard += `<div class="card" data-id="${post.id}" style="width: 20rem">
           <div class="card-body">
             <h5 class="card-title">${post.title}</h5>
@@ -27,41 +27,55 @@ function getPosts() {
       });
       cards.innerHTML = newCard;
     })
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error));
 }
-
 
 getPosts();
 
-cards.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn-delete")) {
-    const id = e.target.getAttribute("data-id");
-    deletePost(id, e.target.closest(".card"));
+cards.addEventListener('click', e => {
+  if (e.target.classList.contains('btn-delete')) {
+    const id = e.target.getAttribute('data-id');
+    deletePost(id, e.target.closest('.card'));
   }
-  if (e.target.classList.contains("btn-edit")) {
-    const id = e.target.getAttribute("data-id");
-    modal.style.display = "block";
+  if (e.target.classList.contains('btn-edit')) {
+    const id = e.target.getAttribute('data-id');
+    modal.style.display = 'block';
     getPost(id);
   }
 });
 
+modal.addEventListener('click', e => {
+  if (e.target.classList.contains('btn-save')) {
+    const id = e.target.getAttribute('data-id');
+    updatePost(modalTitle.value, modalDescription.value, id);
+  }
+  if (e.target.classList.contains('btn-exit')) {
+    modal.style.display = 'none';
+  }
+});
+window.addEventListener('keydown', e => {
+  if (e.key === 'Escape' || e.key === 'Esc') {
+    // Esc для старих браузерів
+    modal.style.display = 'none';
+  }
+});
+
 function deletePost(id, cardElement) {
-  fetch(API + "/" + id, {
-    method: "DELETE",
+  fetch(API + '/' + id, {
+    method: 'DELETE',
   })
-    .then((res) => {
+    .then(res => {
       if (res.ok) {
-        console.log("Data deleted");
+        console.log('Data deleted');
         cardElement.remove();
       }
     })
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error));
 }
-
 
 function addPost(title, description) {
   fetch(API, {
-    method: "POST",
+    method: 'POST',
     body: JSON.stringify({
       title: title,
       body: description,
@@ -69,20 +83,20 @@ function addPost(title, description) {
       id: Date.now(),
     }),
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   })
-    .then((res) => {
+    .then(res => {
       if (res.ok) {
-        console.log("Post added");
-        inputTitle.value = "";
-        inputDescription.value = "";
+        console.log('Post added');
+        inputTitle.value = '';
+        inputDescription.value = '';
         return res.json();
       } else {
-        throw new Error("Failed to add");
+        throw new Error('Failed to add');
       }
     })
-    .then((post) => {
+    .then(post => {
       const newCardHTML = `<div class="card" style="width: 20rem">
           <div class="card-body">
             <h5 class="card-title">${post.title}</h5>
@@ -93,14 +107,12 @@ function addPost(title, description) {
             <button class="btn btn-primary btn-delete" data-id="${post.id}">Delete</button>
           </div>
         </div>`;
-      cards.insertAdjacentHTML("afterbegin", newCardHTML);
+      cards.insertAdjacentHTML('afterbegin', newCardHTML);
     })
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error));
 }
 
-
-
-addButton.addEventListener("click", (e) => {
+addButton.addEventListener('click', e => {
   e.preventDefault();
   const newTitle = inputTitle.value;
   const newDescription = inputDescription.value;
@@ -109,8 +121,8 @@ addButton.addEventListener("click", (e) => {
 
 function updatePost(title, description, id) {
   const cardElement = document.querySelector(`[data-id="${id}"]`);
-  fetch(API + "/" + id, {
-    method: "PUT",
+  fetch(API + '/' + id, {
+    method: 'PUT',
     body: JSON.stringify({
       title: title,
       body: description,
@@ -118,38 +130,33 @@ function updatePost(title, description, id) {
       userId: 1,
     }),
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   })
-    .then((res) => {
+    .then(res => {
       return res.json();
     })
-    .then((updatePost) => {
-      const cardTitle = cardElement.querySelector(".card-title");
-      const cardBody = cardElement.querySelector(".card-text");
+    .then(updatePost => {
+      const cardTitle = cardElement.querySelector('.card-title');
+      const cardBody = cardElement.querySelector('.card-text');
       cardTitle.textContent = updatePost.title;
-      console.log("🚀 ~ .then ~ cardTitle.textContent:", cardTitle.textContent)
       cardBody.textContent = updatePost.body;
-      console.log("🚀 ~ .then ~ cardBody.textContent:", cardBody.textContent)
-      modal.style.display = "none";
-      modalTitle.value = "";
-      modalDescription.value = "";
+      modal.style.display = 'none';
+      modalTitle.value = '';
+      modalDescription.value = '';
     })
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error));
 }
-
-
 
 function getPost(id) {
-  fetch(API + "/" + id, {
-    method: "GET",
+  fetch(API + '/' + id, {
+    method: 'GET',
   })
-    .then((res) => res.json())
-    .then((data) => {
+    .then(res => res.json())
+    .then(data => {
       modalTitle.value = data.title;
       modalDescription.value = data.body;
-      btnSave.setAttribute("data-id", data.id);
+      btnSave.setAttribute('data-id', data.id);
     })
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error));
 }
-
