@@ -12,7 +12,7 @@ let newCard = "";
 function getPosts() {
   fetch(API)
     .then((res) => res.json())
-    .then((posts) => {
+    .then((posts) => { 
       posts.slice(0, 12).map((post) => {
         return (newCard += `<div class="card" data-id="${post.id}" style="width: 20rem">
           <div class="card-body">
@@ -128,7 +128,9 @@ function updatePost(title, description, id) {
       const cardTitle = cardElement.querySelector(".card-title");
       const cardBody = cardElement.querySelector(".card-text");
       cardTitle.textContent = updatePost.title;
+      console.log("🚀 ~ .then ~ cardTitle.textContent:", cardTitle.textContent)
       cardBody.textContent = updatePost.body;
+      console.log("🚀 ~ .then ~ cardBody.textContent:", cardBody.textContent)
       modal.style.display = "none";
       modalTitle.value = "";
       modalDescription.value = "";
