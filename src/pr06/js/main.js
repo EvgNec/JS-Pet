@@ -1,6 +1,13 @@
-require('dotenv').config();
+import {getPet, getPetId} from './api.js'
 
-const password = process.env.PASSWORD;
-const apiKey = process.env.API_KEY;
 
-console.log('Пароль:', password);
+
+// getPet()
+getPetId(1);
+getPetId(2);
+getPetId(3);
+
+
+
+
+  
