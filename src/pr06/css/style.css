@@ -1,4 +1,28 @@
-body {
-    display: block;
-    margin: 12px;
-}
+
+/* Загальні налаштування */
+* {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+  }
+  
+  /* Контейнер */
+  .container {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: auto;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+   margin-right: 10px;
+   margin-top: 10px; 
+  }
+
+  .modal {
+display: none;
+  }
