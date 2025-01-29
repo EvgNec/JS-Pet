@@ -1,4 +1,8 @@
-body {
-    display: block;
-    margin: 12px;
-}
+
+/* Загальні налаштування */
+* {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+  }
+  
