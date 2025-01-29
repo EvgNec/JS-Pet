@@ -1,23 +1,22 @@
 
-var canvas = document.getElementById("canvas");
-var c = canvas.getContext("2d");
-var tx = window.innerWidth;
-var ty = window.innerHeight;
+let canvas = document.getElementById("canvas");
+let c = canvas.getContext("2d");
+let tx = window.innerWidth;
+let ty = window.innerHeight;
 canvas.width = tx;
 canvas.height = ty;
-//c.lineWidth= 5;
-//c.globalAlpha = 0.5;
 
-var mousex = 0;
-var mousey = 0;
+let mousex = 0;
+let mousey = 0;
 
-addEventListener("mousemove", function() {
-  mousex = event.clientX;
-  mousey = event.clientY;
+addEventListener("mousemove", function(e) {
+  mousex = e.clientX;
+  console.log("🚀 ~ addEventListener ~   mousex = e.clientX;:",   e.clientX)
+  mousey = e.clientY;
 });
 
 
-var grav = 0.99;
+let grav = 0.99;
 c.strokeWidth=5;
 function randomColor() {
   return (
@@ -51,8 +50,8 @@ function Ball() {
   };
 }
 
-var bal = [];
-for (var i=0; i<50; i++){
+let bal = [];
+for (let i=0; i<50; i++){
     bal.push(new Ball());
 }
 
@@ -65,7 +64,7 @@ function animate() {
   }
   requestAnimationFrame(animate);
   c.clearRect(0, 0, tx, ty);
-  for (var i = 0; i < bal.length; i++) {
+  for (let i = 0; i < bal.length; i++) {
     bal[i].update();
     bal[i].y += bal[i].dy;
     bal[i].x += bal[i].dx;
@@ -100,4 +99,4 @@ animate();
 setInterval(function() {
   bal.push(new Ball());
   bal.splice(0, 1);
-}, 400);
+}, 4000);
