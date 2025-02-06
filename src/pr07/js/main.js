@@ -11,7 +11,6 @@ let mousey = 0;
 
 addEventListener("mousemove", function(e) {
   mousex = e.clientX;
-  console.log("🚀 ~ addEventListener ~   mousex = e.clientX;:",   e.clientX)
   mousey = e.clientY;
 });
 
