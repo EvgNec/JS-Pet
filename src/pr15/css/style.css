@@ -5,4 +5,29 @@
     padding: 0;
   box-sizing: border-box;
   }
+
+/* батько */
+.block{
+
+}
+
+/* flex-контейнер */
+.block__row{
+width: 380px;
+border: 5px solid #fcfcfb;
+display: flex;
+justify-content: space-between;
+}
+
+/* flex-елемент */
+.block__element{
+
+border: 5px solid #faf9fb;
+}
+
+/* контент */
+.block__content{
+
+background-color: #f9fcfc; /* плюс інші стилі для тексту, відступи */
+}
   
