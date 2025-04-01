@@ -6,3 +6,30 @@
   box-sizing: border-box;
   }
   
+  .card {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    background: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+.word {
+    font-size: 24px;
+    font-weight: bold;
+}
+.definition {
+    margin-top: 10px;
+    font-size: 16px;
+}
+.example {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+.synonyms {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #007bff;
+}

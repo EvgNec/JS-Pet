@@ -1,4 +1,3 @@
-[
     {
         "word_en": "want",
         "word_ru": "хочу",
@@ -11,18 +10,4 @@
             "Nos": "queremos",
             "EEles": "querem"
         }
-    },
-    {
-        "word_en": "can",
-        "word_ru": "хочу",
-        "word_uk": "бажаю",
-        "word_pr": "poder",
-        "word_pr_face": {
-            "Eu": "posso",
-            "Tu": "podes",
-            "Ele": "pode",
-            "Nos": "podemos",
-            "EEles": "podem"
-        }
     }
-]
