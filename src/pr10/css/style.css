@@ -33,3 +33,14 @@
     font-size: 14px;
     color: #007bff;
 }
+#button-block {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  #button-block button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }

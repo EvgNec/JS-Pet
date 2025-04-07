@@ -1,30 +1,62 @@
 [
     {
         "id": 1,
-        "word_en": "want",
-        "word_ru": "хочу",
-        "word_uk": "бажаю",
-        "word_pr": "querer",
-        "word_pr_face": {
+        "pt":{
+            "word": "querer",
             "Eu": "quero",
             "Tu": "queres",
             "Ele": "quer",
             "Nos": "queremos",
-            "EEles": "querem"
+            "Eles": "querem"
+        },
+        "en":{
+            "word": "want"
+        },
+        "ru":{
+            "word": "хочу"
+        },
+        "uk":{
+            "word": "бажаю"
         }
-    },
-    {
+      },
+      {
         "id": 2,
-        "word_en": "can",
-        "word_ru": "хочу",
-        "word_uk": "бажаю",
-        "word_pr": "poder",
-        "word_pr_face": {
+        "pt":{
+            "word": "poder",
             "Eu": "posso",
             "Tu": "podes",
             "Ele": "pode",
             "Nos": "podemos",
-            "EEles": "podem"
+            "Eles": "podem"
+        },
+        "en":{
+            "word": "can"
+        },
+        "ru":{
+            "word": "мочь"
+        },
+        "uk":{
+            "word": "могти"
         }
-    }
+      },
+    {
+        "id": 3,
+        "pt":{
+            "word": "saber",
+            "Eu": "sei",
+            "Tu": "sabes",
+            "Ele": "sabe",
+            "Nos": "sabenos",
+            "Eles": "sabem"
+        },
+        "en":{
+            "word": "know"
+        },
+        "ru":{
+            "word": "знать"
+        },
+        "uk":{
+            "word": "знати"
+        }
+      }
 ]
