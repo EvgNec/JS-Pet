@@ -24,15 +24,16 @@ function markById(id,ln) {
 // Функція очистки
 
 
-function handleClick(action) {
+export function handleClick(action) {
+    console.log(action);
     switch(action) {
-      case 'save':
+      case 'pt':
         alert('Дані збережено!');
         break;
-      case 'edit':
+      case 'en':
         alert('Редагування...');
         break;
-      case 'delete':
+      case 'uk':
         alert('Видалено!');
         break;
       default:

@@ -16,14 +16,21 @@
       <div class="synonyms" id="synonyms"></div>
   </div>
   <div id="button-block">
-    <button onclick="handleClick('pt')">Portuges</button>
-    <button onclick="handleClick('en')">English</button>
-    <button onclick="handleClick('uk')">Ukraine</button>
-    <button onclick="handleClick('nn')">Next</button>
+    <button id="pt">Portuges</button>
+    <button id="en">English</button>
+    <button id="uk">Ukraine</button>
+    <button id="nn">Next</button>
   </div>
 
 
    
-    <script src="../js/main.js" type="module"></script>
+    <script src="../js/main.js" type="module">
+ import { handleClick } from '../js/main.js';
+
+document.getElementById("pt").addEventListener('click', () => handleClick("pt"));
+document.getElementById("en").addEventListener('click', () => handleClick("en"));
+document.getElementById("uk").addEventListener('click', () => handleClick("uk"));
+
+    </script>
   </body>
 </html>
