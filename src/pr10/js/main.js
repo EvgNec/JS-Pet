@@ -16,7 +16,7 @@ function markById(id, ln) {
       cards.innerHTML = '';
       handlerAdd(`${data[ln].word}`);
 
-      if ((ln = 'pt')) {
+      if ((ln === 'pt')) {
         console.log(`${[ln]}`);
 
         handlerAdd(`'Eu: ' - ${data[ln].Eu}`);
@@ -46,16 +46,20 @@ function handleClick(action) {
   switch (action) {
     case 'pt':
       markById(cardId, action);
+      console.log(action);
       break;
     case 'en':
       markById(cardId, action);
+      console.log(action);
       break;
     case 'uk':
       markById(cardId, action);
+      console.log(action);
       break;
     case 'nn':
       cardId++;
       markById(cardId, 'pt');
+      console.log(action);
       break;
     default:
       console.log('Невідома дія');
