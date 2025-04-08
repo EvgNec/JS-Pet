@@ -1,24 +1,29 @@
-let cardId = 2;
+let cardId = 0;
 const buttonBlock = document.querySelector('#button-block');
 const cards = document.querySelector('.card');
 // Функція для пошуку елемента за id
-function getById(dataArray, id) {
-  return dataArray.find(item => item.id === id);
+// function getById(dataArray, id) {
+//   return dataArray.find(item => item.id === id);
+// }
+// Функція для пошуку елемента
+function getBy(dataArray, id) {
+    if (id >= dataArray.length) {
+        cardId = 0;
+        return dataArray[0]; 
+      }
+ return dataArray[id];
 }
-
 // Функція для відображення елемента за id
 function markById(id, ln) {
   fetch('../cards.json')
     .then(response => response.json())
     .then(jsonData => {
-      const data = getById(jsonData, id);
+      const data = getBy(jsonData, id);
       // Очистка вмісту
       cards.innerHTML = '';
       handlerAdd(`${data[ln].word}`);
 
       if ((ln === 'pt')) {
-        console.log(`${[ln]}`);
-
         handlerAdd(`'Eu: ' - ${data[ln].Eu}`);
         handlerAdd(`'Tu: ' - ${data[ln].Tu}`);
         handlerAdd(`'Ele: ' - ${data[ln].Ele}`);
@@ -42,24 +47,19 @@ buttonBlock.querySelectorAll('button').forEach(button => {
 });
 
 function handleClick(action) {
-  console.log(action);
   switch (action) {
     case 'pt':
       markById(cardId, action);
-      console.log(action);
       break;
     case 'en':
       markById(cardId, action);
-      console.log(action);
       break;
     case 'uk':
       markById(cardId, action);
-      console.log(action);
       break;
     case 'nn':
       cardId++;
       markById(cardId, 'pt');
-      console.log(action);
       break;
     default:
       console.log('Невідома дія');
