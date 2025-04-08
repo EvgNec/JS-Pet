@@ -36,7 +36,7 @@ ptEl.addEventListener('click', ()=> console.log("object"));
 enEl.addEventListener('click', handleClick("en"));
 ukEl.addEventListener('click', handleClick("uk"));
 nnEl.addEventListener('click', handleClick("pt"));*/
-
+nnEl.addEventListener('click', handleClick("pt1"));
 export function handleClick(action) {
     console.log(action);
     console.log("ction");
