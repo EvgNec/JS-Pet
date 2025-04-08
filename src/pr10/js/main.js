@@ -1,5 +1,5 @@
 
-
+let cardId = 2;
 // Функція для пошуку елемента за id
 function getById(dataArray, id) {
   return dataArray.find(item => item.id === id);
@@ -21,41 +21,37 @@ function markById(id,ln) {
     .catch(error => console.error('Помилка при завантаженні JSON:', error));
 }
 
-// Функція очистки
+const buttonBlock = document.querySelector('#button-block');
 
+buttonBlock.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', () => {
+    const action = button.dataset.lang;
+    handleClick(action);
+  });
+});
 
-const ptEl = document.querySelector('#button-block button[data-lang="pt"]');
-const enEl = document.querySelector('#button-block button[data-lang="en"]');
-const ukEl = document.querySelector('#button-block button[data-lang="uk"]');
-const nnEl = document.querySelector('#button-block button[data-lang="nn"]');
-const btn = document.querySelector('button');
-const action2 = btn.dataset;
-console.log(action2);
-/*
-ptEl.addEventListener('click', ()=> console.log("object"));
-enEl.addEventListener('click', handleClick("en"));
-ukEl.addEventListener('click', handleClick("uk"));
-nnEl.addEventListener('click', handleClick("pt"));*/
-nnEl.addEventListener('click', handleClick("pt1"));
-export function handleClick(action) {
+function handleClick(action) {
     console.log(action);
-    console.log("ction");
-    // switch(action) {
-    //   case 'pt':
-    //     alert('Дані збережено!');
-    //     break;
-    //   case 'en':
-    //     alert('Редагування...');
-    //     break;
-    //   case 'uk':
-    //     alert('Видалено!');
-    //     break;
-    //   default:
-    //     console.log('Невідома дія');
-    // }
+    switch(action) {
+      case 'pt':
+        markById(cardId,action);
+        break;
+      case 'en':
+        markById(cardId,action);
+        break;
+      case 'uk':
+        markById(cardId,action);
+        break;
+        case 'nn':
+            cardId++;
+            markById(cardId,"pt");
+            break;
+      default:
+        console.log('Невідома дія');
+    }
   }
 
 
 
 
-markById(1,"pt");
+
