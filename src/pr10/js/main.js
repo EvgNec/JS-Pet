@@ -61,6 +61,13 @@ function handleClick(action) {
       cardId++;
       markById(cardId, 'pt');
       break;
+      case 'pp':
+        cardId--;
+        if (cardId<0) {
+          cardId=0;
+        }
+        markById(cardId, 'pt');
+        break;
     default:
       console.log('Невідома дія');
   }
