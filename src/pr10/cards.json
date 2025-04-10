@@ -96,21 +96,40 @@
         },
         {
             "pt":{
-                "word": "pedir",
-                "Eu": "preço",
-                "Tu": "pedes",
-                "Ele": "pede",
-                "Nos": "pedimos",
-                "Eles": "pedem"
+                "word": "estar",
+                "Eu": "estou",
+                "Tu": "estás",
+                "Ele": "está",
+                "Nos": "estamos",
+                "Eles": "estão"
             },
             "en":{
-                "word": "ask"
+                "word": "be"
             },
             "ru":{
-                "word": "спросить"
+                "word": "быть"
             },
             "uk":{
-                "word": "запитати"
+                "word": "бути (то що змінюється)"
             }
-          }
+          },
+          {
+              "pt":{
+                  "word": "ser",
+                  "Eu": "sou",
+                  "Tu": "es",
+                  "Ele": "é",
+                  "Nos": "somos",
+                  "Eles": "são"
+              },
+              "en":{
+                  "word": "be"
+              },
+              "ru":{
+                  "word": "быть"
+              },
+              "uk":{
+                  "word": "бути (то що не змінюється)"
+              }
+            }
 ]
