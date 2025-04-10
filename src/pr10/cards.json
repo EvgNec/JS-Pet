@@ -142,11 +142,11 @@
             {
                 "pt":{
                     "word": "bebo",
-                    "Eu": "",
-                    "Tu": "",
-                    "Ele": "",
-                    "Nos": "",
-                    "Eles": ""
+                    "Eu": "bebi",
+                    "Tu": "bebeste",
+                    "Ele": "bebeu",
+                    "Nos": "bebemos",
+                    "Eles": "beberam"
                 },
                 "en":{
                     "word": "drink"
@@ -158,5 +158,151 @@
                     "word": "пити"
                 },
                 "rate":2
-              }
+              },
+              {
+                  "pt":{
+                      "word": "Escolher",
+                      "Eu": "escolhi",
+                      "Tu": "escolheste",
+                      "Ele": "escolheu",
+                      "Nos": "escolhemos",
+                      "Eles": "escolheram"
+                  },
+                  "en":{
+                      "word": "сhoose"
+                  },
+                  "ru":{
+                      "word": "выбирать"
+                  },
+                  "uk":{
+                      "word": "вибирати"
+                  },
+                  "rate":2
+                },
+                {
+                    "pt": {
+                      "word": "Falar",
+                      "Eu": "falei",
+                      "Tu": "falaste",
+                      "Ele": "falou",
+                      "Nos": "falámos",
+                      "Eles": "falaram"
+                    },
+                    "en": { "word": "speak" },
+                    "ru": { "word": "говорить" },
+                    "uk": { "word": "говорити" },
+                    "rate": 1
+                  },
+                  {
+                    "pt": {
+                      "word": "Beber",
+                      "Eu": "bebi",
+                      "Tu": "bebeste",
+                      "Ele": "bebeu",
+                      "Nos": "bebemos",
+                      "Eles": "beberam"
+                    },
+                    "en": { "word": "drink" },
+                    "ru": { "word": "пить" },
+                    "uk": { "word": "пити" },
+                    "rate": 1
+                  },
+                  {
+                    "pt": {
+                      "word": "Partir",
+                      "Eu": "parti",
+                      "Tu": "partiste",
+                      "Ele": "partiu",
+                      "Nos": "partimos",
+                      "Eles": "partiram"
+                    },
+                    "en": { "word": "leave" },
+                    "ru": { "word": "уходить" },
+                    "uk": { "word": "вирушати" },
+                    "rate": 1
+                  },
+                  {
+                    "pt": {
+                      "word": "Escolher",
+                      "Eu": "escolhi",
+                      "Tu": "escolheste",
+                      "Ele": "escolheu",
+                      "Nos": "escolhemos",
+                      "Eles": "escolheram"
+                    },
+                    "en": { "word": "choose" },
+                    "ru": { "word": "выбирать" },
+                    "uk": { "word": "вибирати" },
+                    "rate": 2
+                  },
+                  {
+                    "pt": {
+                      "word": "Fazer",
+                      "Eu": "fiz",
+                      "Tu": "fizeste",
+                      "Ele": "fez",
+                      "Nos": "fizemos",
+                      "Eles": "fizeram"
+                    },
+                    "en": { "word": "do/make" },
+                    "ru": { "word": "делать" },
+                    "uk": { "word": "робити" },
+                    "rate": 3
+                  },
+                  {
+                    "pt": {
+                      "word": "Ver",
+                      "Eu": "vi",
+                      "Tu": "viste",
+                      "Ele": "viu",
+                      "Nos": "vimos",
+                      "Eles": "viram"
+                    },
+                    "en": { "word": "see" },
+                    "ru": { "word": "видеть" },
+                    "uk": { "word": "бачити" },
+                    "rate": 2
+                  },
+                  {
+                    "pt": {
+                      "word": "Ir / Ser",
+                      "Eu": "fui",
+                      "Tu": "foste",
+                      "Ele": "foi",
+                      "Nos": "fomos",
+                      "Eles": "foram"
+                    },
+                    "en": { "word": "go / be" },
+                    "ru": { "word": "идти / быть" },
+                    "uk": { "word": "йти / бути" },
+                    "rate": 4
+                  },
+                  {
+                    "pt": {
+                      "word": "Dizer",
+                      "Eu": "disse",
+                      "Tu": "disseste",
+                      "Ele": "disse",
+                      "Nos": "dissemos",
+                      "Eles": "disseram"
+                    },
+                    "en": { "word": "say" },
+                    "ru": { "word": "сказать" },
+                    "uk": { "word": "сказати" },
+                    "rate": 3
+                  },
+                  {
+                    "pt": {
+                      "word": "Trazer",
+                      "Eu": "trouxe",
+                      "Tu": "trouxeste",
+                      "Ele": "trouxe",
+                      "Nos": "trouxemos",
+                      "Eles": "trouxeram"
+                    },
+                    "en": { "word": "bring" },
+                    "ru": { "word": "приносить" },
+                    "uk": { "word": "приносити" },
+                    "rate": 3
+                  }
 ]
