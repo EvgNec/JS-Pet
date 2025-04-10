@@ -55,5 +55,62 @@
         "uk":{
             "word": "знати"
         }
-      }
+      },
+    {
+        "pt":{
+            "word": "prefir",
+            "Eu": "prefiro",
+            "Tu": "preferes",
+            "Ele": "prefere",
+            "Nos": "preferimos",
+            "Eles": "preferem"
+        },
+        "en":{
+            "word": "prefers"
+        },
+        "ru":{
+            "word": "предпочитать"
+        },
+        "uk":{
+            "word": "віддавати перевагу"
+        }
+      },
+      {
+          "pt":{
+              "word": "pedir",
+              "Eu": "preço",
+              "Tu": "pedes",
+              "Ele": "pede",
+              "Nos": "pedimos",
+              "Eles": "pedem"
+          },
+          "en":{
+              "word": "ask"
+          },
+          "ru":{
+              "word": "спросить"
+          },
+          "uk":{
+              "word": "запитати"
+          }
+        },
+        {
+            "pt":{
+                "word": "pedir",
+                "Eu": "preço",
+                "Tu": "pedes",
+                "Ele": "pede",
+                "Nos": "pedimos",
+                "Eles": "pedem"
+            },
+            "en":{
+                "word": "ask"
+            },
+            "ru":{
+                "word": "спросить"
+            },
+            "uk":{
+                "word": "запитати"
+            }
+          }
 ]
