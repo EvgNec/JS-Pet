@@ -21,7 +21,7 @@ function markById(id, ln) {
       const data = getBy(jsonData, id);
       // Очистка вмісту
       cards.innerHTML = '';
-      handlerAdd(`${data[ln].word}`);
+      // handlerAdd(`${data[ln].word}`);
 
       if ((ln === 'pt')) {
         handlerAdd(`'Eu: ' - ${data[ln].Eu}`);
@@ -30,8 +30,10 @@ function markById(id, ln) {
         handlerAdd(`'Nos: ' - ${data[ln].Nos}`);
         handlerAdd(`'Eles: ' - ${data[ln].Eles}`);
       }
-      else if (ln === 'tr') {
-
+      else if ((ln === 'tr')) {
+        handlerAdd(`'En: ' - ${data.en.word}`);
+        handlerAdd(`'Ru: ' - ${data.ru.word}`);
+        handlerAdd(`'Ua: ' - ${data.uk.word}`);
       }
 
       function handlerAdd(str) {
