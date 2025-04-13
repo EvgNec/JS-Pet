@@ -30,6 +30,9 @@ function markById(id, ln) {
         handlerAdd(`'Nos: ' - ${data[ln].Nos}`);
         handlerAdd(`'Eles: ' - ${data[ln].Eles}`);
       }
+      else if (ln === 'tr') {
+
+      }
 
       function handlerAdd(str) {
         const markup = `<div class="definition">${str}</div>`;
@@ -51,6 +54,9 @@ function handleClick(action) {
     case 'pt':
       markById(cardId, action);
       break;
+      case 'tr':
+        markById(cardId, action);
+        break;      
     case 'en':
       markById(cardId, action);
       break;
